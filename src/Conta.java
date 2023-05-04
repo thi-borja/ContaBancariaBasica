@@ -14,8 +14,8 @@ public class Conta {
     public void start(){
         Scanner sc = new Scanner(System.in);
         int resposta = 1;
-        while(resposta>=1 && resposta<=4){
-            System.out.println("1- Consultar saldos\n" +
+        while(resposta>=1){
+            System.out.println("\n1- Consultar saldos\n" +
                     "2- Receber valor\n" +
                     "3- Transferir valor\n" +
                     "4- Sair");
@@ -40,13 +40,17 @@ public class Conta {
                     case 4:
                         resposta = 0;
                         break;
+                }
+            } else {
+                System.out.println(" \n Resposta invalida \n" );
+                resposta = 1;
             }
         }
-    }}
+    }
 
     private void recebePix(double valor){
         this.saldo += valor;
-        System.out.println("Novo saldo: R$" + saldo);
+        System.out.println("Novo saldo: R$" + this.saldo + "\n");
     }
 
     private void fazPix(double valor){
@@ -55,7 +59,7 @@ public class Conta {
             return;
         }
         this.saldo -= valor;
-        System.out.println("Transferencia bem-sucedida.");
+        System.out.println("Transferencia bem-sucedida. Saldo atual: R$" + this.saldo + "\n");
     }
 
     private void consultarSaldo(){
@@ -63,7 +67,7 @@ public class Conta {
         System.out.println("Nome: " + nome + "\n" +
                 "Tipo Conta: " + tipoConta + "\n" +
                 "Saldo atual: " + saldo);
-        System.out.println("*****************");
+        System.out.println("*****************\n");
     }
 
 
