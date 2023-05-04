@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Conta {
 
-    private String tipoConta;
+    private final String tipoConta;
     private double saldo;
-    private String nome;
+    private final String nome;
 
     public Conta(String nome, String tipoConta) {
         this.nome = nome;
